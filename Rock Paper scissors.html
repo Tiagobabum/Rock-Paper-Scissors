@@ -6,15 +6,52 @@
 </head>
 <body>
     <script>
+function getHumanChoice () {
+    let escolherOpcao = prompt("Por favor digite a sua escolha");
+}
+function getComputerChoice () {
+    let numeroAleatorio = Math.floor(Math.random() * 3) + 1;
+    if (numeroAleatorio === 1) {
+        return "Rock"
+    }
+    else if (numeroAleatorio === 2) {
+        return "Scissors"
+    }
+    else if (numeroAleatorio === 3) {
+        return "Paper"
+    }
+     return numeroAleatorio;   
+}
+function repetirFuncao(numeroDeVezes ) {
+for (let i=0; i<numeroDeVezes; i++) {
+    let num = getComputerChoice();
+    console.log(num);
+}
+}
+let i = getHumanChoice;
+ 
+let humanScore = 0
+let computerScore = 0 
 
 
-
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+ if (humanChoice === computerChoice)  {   
+       return "Empate"
+ }
+ else if (
+    (humanChoice === "rock" && computerChoice === "Scissors") ||
+    (humanChoice === "scissors" && computerChoice === "Paper")
+    (humanChoice === "paper" && computerChoice === "Rock")
+       
+ ) {
+     return "Voce ganhou!"
+   } 
+ else {
+     return "Voce Perdeu!"
+   }
+}
     </script>
-
-
-
-
-
 
 </body>
 
