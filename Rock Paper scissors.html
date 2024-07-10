@@ -6,51 +6,81 @@
 </head>
 <body>
     <script>
-function getHumanChoice () {
-    let escolherOpcao = prompt("Por favor digite a sua escolha");
+function getHumanChoice (escolherOpcao) {
+     escolherOpcao = prompt("Por favor digite a sua escolha (Rock,Scissors,Paper)");
+     return escolherOpcao;
 }
 function getComputerChoice () {
     let numeroAleatorio = Math.floor(Math.random() * 3) + 1;
     if (numeroAleatorio === 1) {
-        return "Rock"
+        computerChoice = "rock"
     }
     else if (numeroAleatorio === 2) {
-        return "Scissors"
+        computerChoice = "scissors"
     }
     else if (numeroAleatorio === 3) {
-        return "Paper"
+        computerChoice = "paper"
     }
-     return numeroAleatorio;   
+       return computerChoice
 }
 function repetirFuncao(numeroDeVezes ) {
 for (let i=0; i<numeroDeVezes; i++) {
     let num = getComputerChoice();
-    console.log(num);
+    let humanChoiceResult = getHumanChoice();
+    let num2 = playRound(num, humanChoiceResult);
+
+    console.log("The computer chose:", num, "/// Your choice was:" ,humanChoiceResult, "/// Result: ",num2);
+  } 
 }
-}
-let i = getHumanChoice;
- 
-let humanScore = 0
-let computerScore = 0 
+
+let humanScore = 0;
+let computerScore = 0;
 
 
-function playRound(humanChoice, computerChoice) {
+function playRound(computerChoice, humanChoice) {
     humanChoice = humanChoice.toLowerCase();
  if (humanChoice === computerChoice)  {   
-       return "Empate"
+       return "Tie"
  }
  else if (
-    (humanChoice === "rock" && computerChoice === "Scissors") ||
-    (humanChoice === "scissors" && computerChoice === "Paper")
-    (humanChoice === "paper" && computerChoice === "Rock")
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock")
        
  ) {
-     return "Voce ganhou!"
+    humanScore++
+    return `You win! ${humanChoice} beats ${computerChoice}.`;
    } 
- else {
-     return "Voce Perdeu!"
+ else if (
+    (computerChoice === "rock" && humanChoice === "scissors") ||
+    (computerChoice === "scissors" && humanChoice === "paper") ||
+    (computerChoice === "paper" && humanChoice === "rock")
+   )
+   {
+       computerScore++
+       return `You lose! ${computerChoice} beats ${humanChoice}.`;
    }
+   else {
+       console.log(repetirFuncao(1))
+       return "Write the options correctly"     
+   }
+   
+} 
+function playGame() {
+repetirFuncao(5); 
+console.log(`Your Score: ${humanScore}`)
+console.log(`Computer Score: ${computerScore}`)
+if (computerScore > humanScore) {
+  console.log ("You lose")
+  }
+else if (humanScore>computerScore) { 
+  console.log ("You Win!")
+  }
+else {
+  console.log ("Tie!")
+  }
 }
+window.onload = playGame
     </script>
 
 </body>
