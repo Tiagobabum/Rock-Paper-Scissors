@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    margin: 0;      
+}
+.flex-button {
+    display: flex;
+    justify-content: center;
+    padding-block: 10px;
+    background-color: rgb(183, 0, 255);
+    font-size: 50px;
+    color: white;
+    font-style: italic;
+}
+.display-container {
+    display: flex;
+}
+.computer-player {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    border: solid 2px #333;
+    background-color: rgba(59, 215, 32, 0.552);
+    font-size: 25px;
+}
+.human-player {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    background-color: rgba(59, 215, 32, 0.552);
+    border: solid 2px  #333; 
+    font-size: 25px;
+}
+.game-image {
+    display: flex;
+    width: 50%;
+    border: 2px solid #333;
+    padding-top: 10%;     
+    background-color: aqua; 
+    align-items: center;
+    flex-direction: column;   
+} 
+.item {
+    text-align: center;
+    margin-top: 20px
+}
+button {
+    padding: 15px 30px;
+    font-size: 22px;
+}
+.flex-container {
+    display:flex; 
+}
+.computer-game {
+    display: flex;
+    background-color: aqua;
+    width: 50%;
+    border: 2px solid #333;
+    flex-direction: column;   
+    align-items: center;
+    padding-top: 10%;
+    gap: 16px;
+}
+.text-game {
+    border:solid 2px #333;
+    background-color: rgb(219, 229, 79); 
+    font-size: 20px;
+    display: flex;
+    justify-content: center; 
+}
+.computer-result {
+   display: flex;
+   
+}
+.retry {
+   display: flex;
+   justify-content: center;
+}
+#showRock, #showPaper, #showScissor {
+   display: none;
+   max-width: 100%;
+}
+#humScore, #comScore{
+    display: flex;
+    border: solid 5px #333;
+    background-color: rgb(160, 145, 145);
+    font-size: 30px;
+    color: rgb(255, 255, 255);   
+}
+h1 {
+    text-align: center;
+ }

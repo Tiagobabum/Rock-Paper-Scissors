@@ -3,86 +3,47 @@
 <head>  
     <meta charset="UTF-8">
     <title>Rock, paper and scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-    <script>
-function getHumanChoice (escolherOpcao) {
-     escolherOpcao = prompt("Por favor digite a sua escolha (Rock,Scissors,Paper)");
-     return escolherOpcao;
-}
-function getComputerChoice () {
-    let numeroAleatorio = Math.floor(Math.random() * 3) + 1;
-    if (numeroAleatorio === 1) {
-        computerChoice = "rock"
-    }
-    else if (numeroAleatorio === 2) {
-        computerChoice = "scissors"
-    }
-    else if (numeroAleatorio === 3) {
-        computerChoice = "paper"
-    }
-       return computerChoice
-}
-function repetirFuncao(numeroDeVezes ) {
-for (let i=0; i<numeroDeVezes; i++) {
-    let num = getComputerChoice();
-    let humanChoiceResult = getHumanChoice();
-    let num2 = playRound(num, humanChoiceResult);
+<div class="flex-button">GAME</div>
+<div class="display-container">
+<div class="human-player">Human player</div>
+<div class="computer-player">Computer player</div>
+</div>
+<div class="flex-container">
+   <div class="game-image">
+       <div id="humScore"></div>
+       <div class="item">
+       <img src="rock.jpg" alt ="rock image ">
+       <img src="paper.jpg" alt="paper image">
+       <img src="scissor.jpg" alt="scissor image">
+    </div>
+    <div class="item">
+      <button id="roc">Rock</button>
+      <button id="pap">Paper</button>
+      <button id="sci">Scissors</button>
+    </div>  
+    </div>
+   <div class="computer-game">
+           <div id="comScore"></div>
 
-    console.log("The computer chose:", num, "/// Your choice was:" ,humanChoiceResult, "/// Result: ",num2);
-  } 
-}
+       <div class="computer-result">
+           <img id="showRock" src="rock.jpg" alt ="rock image">
+           <img id="showPaper"src="paper.jpg" alt="paper image">
+           <img id="showScissor"src="scissor.jpg" alt="scissor image">
+       </div>
+   </div>
+</div>
 
-let humanScore = 0;
-let computerScore = 0;
-
-
-function playRound(computerChoice, humanChoice) {
-    humanChoice = humanChoice.toLowerCase();
- if (humanChoice === computerChoice)  {   
-       return "Tie"
- }
- else if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "paper") ||
-    (humanChoice === "paper" && computerChoice === "rock")
-       
- ) {
-    humanScore++
-    return `You win! ${humanChoice} beats ${computerChoice}.`;
-   } 
- else if (
-    (computerChoice === "rock" && humanChoice === "scissors") ||
-    (computerChoice === "scissors" && humanChoice === "paper") ||
-    (computerChoice === "paper" && humanChoice === "rock")
-   )
-   {
-       computerScore++
-       return `You lose! ${computerChoice} beats ${humanChoice}.`;
-   }
-   else {
-       console.log(repetirFuncao(1))
-       return "Write the options correctly"     
-   }
-   
-} 
-function playGame() {
-repetirFuncao(5); 
-console.log(`Your Score: ${humanScore}`)
-console.log(`Computer Score: ${computerScore}`)
-if (computerScore > humanScore) {
-  console.log ("You lose")
-  }
-else if (humanScore>computerScore) { 
-  console.log ("You Win!")
-  }
-else {
-  console.log ("Tie!")
-  }
-}
-window.onload = playGame
-    </script>
-
+<div class="text-game">
+    <div id="r3"></div>
+    
+</div>
+<div class="retry">
+<button id="playAgain">Play Again</button>
+</div>
 </body>
 
 
